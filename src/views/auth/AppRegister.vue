@@ -35,7 +35,7 @@ export default {
                 } else {
                     this.$notify.error('Ro\'yxatdan o\'tishda xatolik!');
                 }
-            }, error => console.log(error));
+            }).catch(err => {console.log(err)});
         },
         goToHome(){
 			if(this.$route.path !== '/'){

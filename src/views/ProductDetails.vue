@@ -38,7 +38,7 @@ export default {
 			}
 
 			Service.getProduct(slug)
-			.then(res => {console.log(res.data.data)
+			.then(res => {
 				this.data = res.data.data;
 			}, error => console.log(error));
 		}

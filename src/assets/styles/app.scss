@@ -346,6 +346,7 @@ body{
                     display: flex;
                     flex-wrap: wrap;
                     row-gap: 8px;
+                    align-items: center;
                     p{
                         min-width: 15%;
                         font-size: 1.5rem;
@@ -650,10 +651,73 @@ body{
     .main-layout{
         width: 840px;
     }
+
+    .main-layout .container .products .product-item{
+        width: calc(50% - 24px);
+    }
 }
 
 @media screen and (max-width: 899px) {
     .main-layout{
         width: 320px;
+
+        nav{
+
+            .shop-logo{
+                .logoImg{
+                    width: 32px;
+                    height: 32px;
+                }
+                h1{
+                    font-size: 1.5rem;
+                    line-height: 30px;
+                }
+            }
+
+            .header-items{
+                a{
+                    font-size: 1rem;
+                }
+                button{
+                    padding: 2px 4px;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .container{
+
+            .products{
+                column-gap: 24px;
+
+                .product-item{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .main-layout .product-details-container .product-item-details .product-img img{
+        width: 100%;
+    }
+    .main-layout .product-details-container .product-comments .comment-form{
+        width: 100%;
+    }
+    .main-layout .product-details-container .product-comments .comment-list .comment-item{
+        justify-content: space-between;
+        p{
+            font-size: 1.25rem;
+        }
+
+        h3{
+            min-width: 35%;
+        }
+    }
+
+    .login-page .auth-wr{
+        width: 280px;
+    }
+    .login-page{
+        padding-right: 36px;
     }
 }

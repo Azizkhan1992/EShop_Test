@@ -27,7 +27,7 @@ export default {
         }
     },
     mounted(){
-        this.getCommentRate()
+        // this.getCommentRate()
     },
     methods: {
         vote(star) {

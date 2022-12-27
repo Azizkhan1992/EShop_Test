@@ -15,12 +15,7 @@ export default new Vuex.Store({
         },
         changeRate(state, rate){
             state.rate = rate.rate
-            state.comments.forEach(element => {
-                if(element.id == rate.id){
-                    element.rate = rate.rate
-                }
-                // console.log(element, rate)
-            });
+            // X
             // console.log(state.comments, rate)
         },
         changeAuth(state, auth) {

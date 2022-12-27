@@ -18,8 +18,9 @@ export default {
         }
     },
     mounted(){
-        this.logProps()
+        // this.logProps()
         this.changeRate()
+        // console.log('comment', this.data)
     },  
     methods:{
         changeRate(){

@@ -43,7 +43,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    console.log(to.path)
+    // console.log(to.path)
     if (TokenService.getToken() && (to.path == '/login' || to.path == '/register')) {
         next('/');
     } else {

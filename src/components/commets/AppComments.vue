@@ -7,7 +7,7 @@
                 :data="comment"
             ></comment-item>
         </div>
-        <write-comment v-if="$store.state.isAuth" :product-id="productId" @addComment="addComment"></write-comment>
+        <write-comment v-if="$store.state.isAuth" :product-id="productId" @addComment="getComments"></write-comment>
     </div>
 </template>
 <script>
@@ -38,15 +38,19 @@ export default {
         this.getComments();
     },
     methods: {
-        getComments(page = null) {
+        getComments(page = null, comment_id = null) {
             const query = this.getQueryParams(page);
-            Services.getComments(this.productId, query)
+            Services.getComments(this.productId, query, comment_id)
             .then(res => {
                 const data = res.data;
-                // console.log(res.data)
-                this.$store.commit('getComments', res.data.data.list)
                 if (data.success) {
-                    this.comments = data.data.list;
+                    if (comment_id) {
+                        this.comments = [...this.comments, ...data.data.list];
+                    } else {
+                        this.comments = data.data.list;
+                    }
+                    this.total = data.data.total
+                    // console.log(this.comments)
                 }
             })
         },

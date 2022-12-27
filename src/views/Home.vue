@@ -61,7 +61,7 @@ export default {
                 }, error => console.log(error))
         },
         getQueryParams(page, reset) {
-            console.log('query', page, reset)
+            // console.log('query', page, reset)
             if (page) {
                 this.filter.page = page;
             }
